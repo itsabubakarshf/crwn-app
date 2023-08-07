@@ -1,10 +1,10 @@
 import "./index.scss";
 
-const CategoryItem = ({title,imageUrl}) => {
+const CategoryItem = ({id,title,imageUrl}) => {
 
   return (
     <div className='category-container'>
-    <div
+    <div key={id}
       className='background-image'
       style={{
         backgroundImage: `url(${imageUrl})`,

@@ -1,41 +1,18 @@
-import React from 'react'
-import Directory from './components/Directory'
-import './App.scss'
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Home from "./routes/Home";
+import NavBar from "./components/Navigation";
+import "./App.scss";
 const App = () => {
-  const categories =[
-    {
-      "id": 1,
-      "title": "hats",
-      "imageUrl": "https://i.ibb.co/cvpntL1/hats.png"
-    },
-    {
-      "id": 2,
-      "title": "jackets",
-      "imageUrl": "https://i.ibb.co/px2tCc3/jackets.png"
-    },
-    {
-      "id": 3,
-      "title": "sneakers",
-      "imageUrl": "https://i.ibb.co/0jqHpnp/sneakers.png"
-    },
-    {
-      "id": 4,
-      "title": "womens",
-      "imageUrl": "https://i.ibb.co/GCCdy8t/womens.png"
-    },
-    {
-      "id": 5,
-      "title": "mens",
-      "imageUrl": "https://i.ibb.co/R70vBrQ/men.png"
-    }
-  ]
   return (
     <>
-    <div className="app">
-      <Directory categories={categories}/>
-    </div>
+      <Routes>
+      <Route path="/" element={<NavBar/>} >
+        <Route path="/home" index element={<Home/>} />
+        </Route>
+      </Routes>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
