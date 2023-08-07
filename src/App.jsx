@@ -1,5 +1,6 @@
 import React from 'react'
 import Directory from './components/Directory'
+import './App.scss'
 const App = () => {
   const categories =[
     {
